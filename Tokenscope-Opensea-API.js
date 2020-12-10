@@ -22,7 +22,7 @@ function fetchData() {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var rawTextResponse = this.responseText;
-      var cleanTextResonse = DOMPurify.sanitize(rawTextResponse);
+      var cleanTextResonse = DOMPurify.sanitize(rawTextResponse); //This uses the DOMPurify javascript to clean the returned html.
 
       var tokenJSON = JSON.parse(cleanTextResonse);
       var tokenString = JSON.stringify(tokenJSON, null, "    ");
@@ -69,7 +69,7 @@ function fetchData() {
       }
       document.getElementById("tokenTraitList").innerHTML = "Traits (type:value): " + traitList;
       //Replace Token-Description-area HTML
-      var mdContent = "<zero-md><script type=\"text/markdown\">" + tokenJSON.description + "</script></zero-md>";
+      var mdContent = "<zero-md><script type=\"text/markdown\">" + tokenJSON.description + "</script></zero-md>"; //zero-md is a javascript library that displays Markdown as html.
       document.getElementById("tokenDescription").innerHTML = mdContent;
     }
   };
