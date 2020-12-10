@@ -1,6 +1,10 @@
 # TokenScope
-A tool to investigate the metadata and history of non-fungible Ethereum tokens.
+TokenScope is a tool to investigate the metadata and history of non-fungible Ethereum tokens. Currently, it exists as an HTML site.
 
-The HTML page versions v0.xx use Opensea API. If you use content from that project, make sure to update / remove the API_Key.
+In addition to the custom javascript I coded, production environments would require:
 
-## Future plan includes using web3 to allow a user to investigate tokens they own.
+Javascript packages: JQuery, zero-md, DOMPurify; and an Opensea.io API (they're free, you just have to ask through their API documentation page.).
+
+
+
+## Future plans include using web3 to allow a user to investigate tokens they own.
