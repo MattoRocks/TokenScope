@@ -1,15 +1,16 @@
 function fetchData() {
   //Relatively lame URL check
-  var variable = document.getElementById('ospl').value;
-  var urltest = variable.substr(0,26);
+  var rawEntry = document.getElementById('ospl').value;
+  var cleanedEntry = DOMPurify.sanitize(rawEntry);
+  var urltest = cleanedEntry.substr(0,26);
   if (urltest != "https://opensea.io/assets/") {
       window.alert("That is not a proper asset permalink");
       return;
   }
 
   //Builds API Url
-  var len = variable.length;
-  var asset = variable.substr(26, len - 26);
+  var len = cleanedEntry.length;
+  var asset = cleanedEntry.substr(26, len - 26);
   if (asset.length == (asset.lastIndexOf("/") + 1)) {
     asset = asset.substr(0, asset.length - 1);
   }
