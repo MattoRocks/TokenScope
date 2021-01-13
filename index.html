@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>TokenScope v0.08</title>
+		<meta charset="utf-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+		<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+				<div class="major container">
+					<h1 id="startTitle">TokenScope</h1>
+					<h1 id="restartTitle" style="display: none"><a href="">TokenScope Another!</a></h1>
+					<div id="inputArea">
+						<p>(v0.08)</p>
+						<br>
+						<h4>Paste an Ether token's OpenSea.io permalink below</h4>
+						<div id="url-form">
+							<form id="get-url">
+								<input type="url" id="ospl"
+									placeholder="https://opensea.io/assets/0xf3e778f839934fc819cfa1040aabacecba01e049/11112/">
+								<br>
+								<input type="submit" value="Scope it!*" onclick="fetchData(); return false">
+							</form>
+							<p class="disclaimer">*Data displayed is not controlled by TokenScope and may be innaccurate.</p>
+						</div>
+					</div>
+				</div>
+				<div id="hodl"></div>
+			</div>
+
+		<!-- Main -->
+		<div id="main">
+			<br><br>
+			<div class="box container" id="tokenData" style="display: none">
+				<div id="contractDetails">
+					<header>
+						<h2>Contract Details</h2>
+					</header>
+					<section>
+						<div id="creatorContractName"></div>
+						<div id="creatorContractSymbol"></div>
+						<div id="creatorContractDescription"></div>
+						<div id="creatorContractStandard"></div>
+						<div id="creatorContractAddress"></div>
+						<div id="creatorContractURL"></div>
+						<br>
+						<hr>
+					</section>
+				</div>
+				<div id="tokenDetails">
+					<header>
+						<h2>Token Details</h2>
+					</header>
+					<section>
+						<div id="tokenName"></div>
+						<div id="tokenID"></div>
+						<div id="tokenURL"></div>
+						<div id="tokenImageURL"></div>
+						<div id="tokenAnimationURL"></div>
+						<div id="tokenTraitQTY"></div>
+						<div id="tokenTraitList"></div>
+						<br>
+						<hr>
+					</section>
+				</div>
+				<div id="tokenDescriptionArea">
+					<header>
+						<h2>Token Description</h2>
+					</header>
+					<section>
+						<div id="tokenDescription"></div>
+					</section>
+				</div>
+			</div>
+			<br><br>
+		</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+			
+					<header class="major last">
+						<h1>About TokenScope</h1>
+					</header>
+					<p>This tool is free for the crypto-community to use, so don't abuse it or it'll go away! Consider it a free
+						service for personal use, with no gaurantees or warantees.</p>
+					<p>I built this to create a better reading experience of token data, especially of a token's description
+						content. Besides presenting description information in an easy-to-read space, TokenScope also renders any
+						Markdown formatting that may be present (scope <a
+							href="https://opensea.io/assets/0xd07dc4262bcdbf85190c01c996b4c06a461d2430/88386" target="_blank">this
+							link</a> to see Markdown in action). Currently, this site uses <a href="https://docs.opensea.io/"
+							target="_blank">OpenSea.io's API</a>. As of version 0.8, this entire site is open source.</p>
+					<p>I'm <a>Matto#7777</a> on Discord, AKA the artist Azurine (<a href="https://azurine.art/"
+							target="_blank">Website</a> / <a href="https://app.rarible.com/azurine/created"
+							target="_blank">Rarible</a>), and the author M. Lorrox (<a href="https:/mlorrox.com/"
+							target="_blank">Website</a> / <a href="https://app.rarible.com/mlorrox/created"
+							target="_blank">Rarible</a>). I intend to make this site fully open-source in future updates, but
+						currently, the repo linked below only contains the custom javascript I wrote (I'm new to this!). Donations
+						are welcome, and they'll encourage me to work on this project. If it pleases you, you can send tips or
+						tokens to mattorocks.eth.</p>
+			
+					
+					<ul class="icons">
+						<li><a href="https://twitter.com/Matto_Rocks" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/MattoRocks/TokenScope" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+			
+					<ul class="copyright">
+						<li>&copy; TokenScope / Matto. All rights reserved.</li>
+					</ul>
+			
+				</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery-3.5.1.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/scope.js"></script>
+			<script src="assets/js/purify.min.js"></script>
+
+	</body>
+</html>
