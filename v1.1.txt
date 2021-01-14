@@ -1,0 +1,5 @@
+Changelog
+
+V 1.1 Added image and animation preview, terms and conditions, and enableJavascrpt page
+
+V 1.0 Remade site to be fully open source, included a new form on page allowing token contract and id entry.

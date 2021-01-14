@@ -88,11 +88,13 @@ function OSFetch(asset) {
       document.getElementById("tokenID").innerHTML = "Token ID: " + tokenJSON.token_id;
       document.getElementById("tokenURL").innerHTML = "External URL: <a href=\"" + tokenJSON.external_link + "\">" + tokenJSON.external_link + "</a>";
       if (tokenJSON.image_original_url != null) {
+        document.getElementById("tokenImage").innerHTML = "<img style=\"height: 100%; width: 100%; object-fit: contain\" src=\"" + tokenJSON.image_original_url + "\" alt=\"token image\"></img><br><br>";
         document.getElementById("tokenImageURL").innerHTML = "Image file: <a href=\"" + tokenJSON.image_original_url + "\">" + tokenJSON.image_original_url + "</a>";
       } else {
         document.getElementById("tokenImageURL").innerHTML = "Image file: null";
       }
       if (tokenJSON.animation_original_url != null) {
+        document.getElementById("tokenAnimation").innerHTML = "<br><video style=\"height: 100%; width: 100%; object-fit: contain\" controls><source src=\"" + tokenJSON.animation_original_url + "\"></video><br><br>";
         document.getElementById("tokenAnimationURL").innerHTML = "Animation file: <a href=\"" + tokenJSON.animation_original_url + "\">" + tokenJSON.animation_original_url + "</a>";
       } else {
         document.getElementById("tokenAnimationURL").innerHTML = "Animation file: null";
