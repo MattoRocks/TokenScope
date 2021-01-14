@@ -1,12 +1,11 @@
 <!DOCTYPE HTML>
 <!--
-	Directive by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	The HTML of this site is built on top of the 'Directive' site template by HTML5 UP
+	html5up.net | @ajlkn | Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>TokenScope v0.08</title>
+		<title>TokenScope v1.0</title>
 		<meta charset="utf-8" />
 		<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
@@ -16,30 +15,50 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-
 		<!-- Header -->
 			<div id="header">
 				<div class="major container">
 					<h1 id="startTitle">TokenScope</h1>
 					<h1 id="restartTitle" style="display: none"><a href="">TokenScope Another!</a></h1>
+					<br>
 					<div id="inputArea">
-						<p>(v0.08)</p>
-						<br>
-						<h4>Paste an Ether token's OpenSea.io permalink below</h4>
-						<div id="url-form">
-							<form id="get-url">
-								<input type="url" id="ospl"
-									placeholder="https://opensea.io/assets/0xf3e778f839934fc819cfa1040aabacecba01e049/11112/">
-								<br>
-								<input type="submit" value="Scope it!*" onclick="fetchData(); return false">
-							</form>
-							<p class="disclaimer">*Data displayed is not controlled by TokenScope and may be innaccurate.</p>
+						<!-- web3 Form -->
+						<div id="tdHeader">
+							<p class="disclaimer">To use an Opensea permalink, <a id="switchToOs"
+										title="Click to use Opensea API" href="enableJavascript.html" onclick="swapForms();return false;">click
+										here.</a></p>
+							<br>
+							<div id="td-form">
+								<form id="get-token-info">
+									<p>Enter the address of the token's issuing contract.</p>
+									<input type="text" id="tok-con" placeholder="0xf3e778f839934fc819cfa1040aabacecba01e049">
+									<br>
+									<p>Enter the token's ID number.</p>
+									<input type="number" id="tok-id" placeholder="0" min="0" max="999999999999">
+									<br>
+									<input type="submit" value="Scope it!" onclick="tokenData(); return false">
+								</form>
+							</div>
+						</div>
+						<!-- Opensea API Form -->
+						<div id="osHeader" style="display: none">
+							<p class="disclaimer">To use address and token ID, <a id="switchToWeb3" title="Click to use Web3"
+									href="enableJavascript.html" onclick="swapForms();return false;">click here.</a></p>
+							<br>
+							<div id="url-form">
+								<form id="get-url">
+									<p>Enter the token's permalink below.</p>
+									<input type="url" id="ospl"
+										placeholder="https://opensea.io/assets/0xf3e778f839934fc819cfa1040aabacecba01e049/11112/">
+									<br>
+									<input type="submit" value="Scope it!" onclick="permalink(); return false">
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div id="hodl"></div>
 			</div>
-
 		<!-- Main -->
 		<div id="main">
 			<br><br>
@@ -83,14 +102,23 @@
 						<div id="tokenDescription"></div>
 					</section>
 				</div>
+				<div id="tokenJSONMain">
+					<header>
+						<h2>Additional Links</h2>
+					</header>
+					<section>
+						<div id="tokenJSON">
+							<p><a id="openJSON" title="Click to open JSON" href="enableJavascript.html" onclick="JSONWindow();return false;">View full JSON response in new tab</a></p>
+							<div id="tokenInteraction"></div>
+						</div>
+					</section>
+				</div>
 			</div>
 			<br><br>
 		</div>
-
 		<!-- Footer -->
 			<div id="footer">
 				<div class="container">
-			
 					<header class="major last">
 						<h1>About TokenScope</h1>
 					</header>
@@ -100,30 +128,26 @@
 						content. Besides presenting description information in an easy-to-read space, TokenScope also renders any
 						Markdown formatting that may be present (scope <a
 							href="https://opensea.io/assets/0xd07dc4262bcdbf85190c01c996b4c06a461d2430/88386" target="_blank">this
-							link</a> to see Markdown in action). Currently, this site uses <a href="https://docs.opensea.io/"
-							target="_blank">OpenSea.io's API</a>. As of version 0.8, this entire site is open source.</p>
-					<p>I'm <a>Matto#7777</a> on Discord, AKA the artist Azurine (<a href="https://azurine.art/"
-							target="_blank">Website</a> / <a href="https://app.rarible.com/azurine/created"
-							target="_blank">Rarible</a>), and the author M. Lorrox (<a href="https:/mlorrox.com/"
-							target="_blank">Website</a> / <a href="https://app.rarible.com/mlorrox/created"
-							target="_blank">Rarible</a>). I intend to make this site fully open-source in future updates, but
-						currently, the repo linked below only contains the custom javascript I wrote (I'm new to this!). Donations
-						are welcome, and they'll encourage me to work on this project. If it pleases you, you can send tips or
-						tokens to mattorocks.eth.</p>
-			
-					
+							link</a> to see Markdown in action).</p>
+					<p>This site uses <a href="https://docs.opensea.io/"
+							target="_blank">OpenSea.io's API</a>. As of version 1.0, this entire site is open source.</p>
+					<p>I'm Matto (<a href="https://app.ens.domains/name/mattorocks.eth" target="_blank">mattorocks.eth</a> / <a>Matto#7777</a> on Discord / <a href="https://matto.rocks/"
+							target="_blank">website</a>), the artist Azurine (<a href="https://azurine.art/"
+							target="_blank">website</a>), the author M. Lorrox (<a href="https:/mlorrox.com/"
+							target="_blank">website</a>), the poet Matto (<a href="https://freestylehaiku.com/" 
+							target="_blank">website</a>), and filmmaker Matt Costanza (<a href="https://www.imdb.com/name/nm3202209/" 
+							target="_blank">IMDb page</a>).	
 					<ul class="icons">
 						<li><a href="https://twitter.com/Matto_Rocks" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="https://github.com/MattoRocks/TokenScope" class="icon brands fa-github"><span class="label">Github</span></a></li>
 					</ul>
 			
 					<ul class="copyright">
-						<li>&copy; TokenScope / Matto. All rights reserved.</li>
+						<li>&copy; TokenScope.org / Matto.</li>
 					</ul>
 			
 				</div>
 			</div>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery-3.5.1.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
@@ -132,6 +156,5 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/scope.js"></script>
 			<script src="assets/js/purify.min.js"></script>
-
 	</body>
 </html>

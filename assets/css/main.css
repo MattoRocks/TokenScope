@@ -2076,6 +2076,7 @@ input, select, textarea {
 	}
 
 	input[type="text"],
+	input[type="number"],
 	input[type="password"],
 	input[type="email"],
 	input[type="url"],
@@ -2102,12 +2103,12 @@ input, select, textarea {
 		opacity: 1;
 	}
 
-	#get-url {
-		margin-right: 3em;
+	#get-url, #get-token-info {
+	  margin-right: 3em;
 	  margin-left: 3em;
 	}
 
-
+		input[type="number"]:focus,
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
@@ -2118,6 +2119,7 @@ input, select, textarea {
 			border-color: #366c64;/* #62c2b5;*/
 		}
 
+	input[type="number"],	
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
